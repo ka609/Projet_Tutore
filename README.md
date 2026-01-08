@@ -65,29 +65,43 @@ Le projet a été réalisé dans le cadre du **Projet Tutoré de Licence 3** à 
 
 ### 🔧 Installation et utilisation
 
-```bash
+
 # Cloner le projet
+```bash
 git clone https://github.com/ka609/ProjetTutore.git
 cd ProjetTutore/backend
+```
 
 # Créer un environnement virtuel
+
+```bash
 python -m venv venv
 source venv/bin/activate   # Linux / macOS
 venv\Scripts\activate      # Windows
+```
 
 # Installer les dépendances
+
+```bash
 pip install -r requirements.txt
+```
 
 # Appliquer les migrations
+```bash
 python manage.py migrate
+```
 
 # Lancer le serveur backend
+```bash
 python manage.py runserver
+```
 
 # Installer et lancer le frontend Flutter
+```bash
 cd ../frontend
 flutter pub get
 flutter run
+```
 
 ## 🚀 Utilisation
 
@@ -99,19 +113,7 @@ flutter run
 
 📸 *Les captures d'écran sont disponibles dans le rapport du projet.*
 
-## 🔐 Configuration
 
-Créer un fichier `.env` pour le backend :
-
-```ini
-DEBUG=True
-SECRET_KEY=your_secret_key
-DATABASE_NAME=medishop_db
-DATABASE_USER=postgres
-DATABASE_PASSWORD=password
-DATABASE_HOST=localhost
-DATABASE_PORT=5432
-```
 
 ## 🧪 Tests
 
