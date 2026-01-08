@@ -68,8 +68,8 @@ Le projet a été réalisé dans le cadre du **Projet Tutoré de Licence 3** à 
 
 # Cloner le projet
 ```bash
-git clone https://github.com/ka609/ProjetTutore.git
-cd ProjetTutore/backend
+git clone https://github.com/ka609/Projet_Tutore.git
+cd ProjetTutore/Medishop
 ```
 
 # Créer un environnement virtuel
@@ -177,7 +177,7 @@ Voir le fichier **LICENSE** pour plus de détails.
 
 Pour toute question académique ou technique :
 - **GitHub** : https://github.com/ka609
-- **Projet** : https://github.com/ka609/ProjetTutore
+- **Projet** : https://github.com/ka609/Projet_Tutore
 
 ## 🛣️ Roadmap (évolutions futures)
 
