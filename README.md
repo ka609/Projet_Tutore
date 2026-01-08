@@ -1,155 +1,190 @@
 # 🏥 Medishop – Application de gestion de pharmacie en ligne
 
-## 📌 Présentation du projet
+![Status](https://img.shields.io/badge/status-académique-success)
+![Backend](https://img.shields.io/badge/backend-Django-green)
+![Frontend](https://img.shields.io/badge/frontend-Flutter-blue)
+![Database](https://img.shields.io/badge/database-PostgreSQL-informational)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
-**Medishop** est une application de gestion de pharmacie en ligne développée dans le cadre du **Projet Tutoré** de la **Licence 3 – Génie Logiciel (Développement Web et Mobile)** à l’**Université Virtuelle du Burkina Faso (UV-BF)**.
+## 📌 Description
 
-La plateforme permet aux utilisateurs de rechercher et commander des médicaments en ligne, tandis que les pharmacies disposent d’un tableau de bord pour gérer leurs stocks, commandes et livraisons via une API sécurisée.
-
----
-
-## 👨‍🎓 Informations académiques
-
-- **Étudiant** : Kassongo Moussa  
-- **Filière** : Génie Logiciel – Développement Web et Mobile  
-- **Niveau** : Licence 3  
-- **Tuteur** : M. OUEDRAOGO W. A. Marc Christian  
-- **Année académique** : 2023 – 2024  
-- **Université** : Université Virtuelle du Burkina Faso (UV-BF)
+**Medishop** est une application web et mobile permettant la **gestion des pharmacies**, la **recherche** et la **commande de médicaments en ligne**.  
+Le projet a été réalisé dans le cadre du **Projet Tutoré de Licence 3** à l'**Université Virtuelle du Burkina Faso (UV-BF)**.
 
 ---
 
-## 🎯 Objectifs du projet
+## 📑 Table des matières
 
-### Objectif général
-Concevoir et implémenter une plateforme numérique moderne permettant la **gestion des stocks** et la **commande de médicaments en ligne**.
-
-### Objectifs spécifiques
-- Faciliter l’inscription et l’authentification des utilisateurs et pharmacies
-- Permettre la recherche de médicaments par nom, catégorie ou symptôme
-- Gérer les commandes et le panier
-- Proposer un paiement sécurisé
-- Assurer le suivi des commandes et livraisons
-- Optimiser la gestion des prescriptions et des stocks
-
----
-
-## 👥 Utilisateurs cibles
-
-- **Clients** : recherche, commande et suivi des médicaments
-- **Pharmacies** : gestion des stocks, disponibilités et commandes
-- **Administrateur** : supervision globale du système
+- [Fonctionnalités](#-fonctionnalités)
+- [Prérequis et installation](#️-prérequis-et-installation)
+- [Utilisation](#-utilisation)
+- [Configuration](#️-configuration)
+- [Tests](#️-tests)
+- [Déploiement](#️-déploiement)
+- [Contributions](#️-contributions)
+- [Auteurs et remerciements](#️-auteurs-et-remerciements)
+- [Licence](#️-licence)
+- [Support et contact](#️-support-et-contact)
+- [Roadmap](#️-roadmap)
 
 ---
 
-## 🧩 Fonctionnalités principales
+## ✨ Fonctionnalités
 
-- Gestion des comptes utilisateurs et pharmacies
-- Catalogue des médicaments
-- Recherche avancée
-- Panier et commande
-- Paiement sécurisé
-- Suivi des livraisons
-- Gestion des prescriptions
-- Gestion des stocks
+### 👤 Utilisateurs (Clients)
+- Création de compte et authentification
+- Recherche de médicaments (nom, catégorie, symptôme)
+- Ajout au panier
+- Passage de commande
+- Suivi des commandes et livraisons
+
+### 🏪 Pharmacies
 - Tableau de bord pharmacie
+- Gestion du stock de médicaments
+- Gestion des commandes
+- Mise à jour des disponibilités
+
+### 🛠️ Administration
+- Supervision globale du système
+- Gestion des utilisateurs et pharmacies
 
 ---
 
-## 🏗️ Architecture du système
+## ⚙️ Prérequis et installation
 
-L’application repose sur une **architecture client–serveur** :
+### 📦 Prérequis
 
-- **Frontend mobile** : Application Flutter
-- **Backend** : API REST développée avec Django & Django REST Framework
-- **Base de données** : PostgreSQL
-
----
-
-## 🛠️ Technologies utilisées
-
-### Backend
-- Python
-- Django
-- Django REST Framework
-- JWT (authentification)
+#### Backend
+- Python ≥ 3.9
 - PostgreSQL
+- pip / virtualenv
 
-### Frontend
-- Flutter
+#### Frontend
+- Flutter SDK ≥ 3.x
 - Dart
 
-### Autres outils
-- Git & GitHub
-- Postman (tests API)
+### 🔧 Installation et utilisation
 
----
+```bash
+# Cloner le projet
+git clone https://github.com/ka609/ProjetTutore.git
+cd ProjetTutore/backend
 
-## 🧪 Tests et validation
+# Créer un environnement virtuel
+python -m venv venv
+source venv/bin/activate   # Linux / macOS
+venv\Scripts\activate      # Windows
 
-### Tests Backend
+# Installer les dépendances
+pip install -r requirements.txt
+
+# Appliquer les migrations
+python manage.py migrate
+
+# Lancer le serveur backend
+python manage.py runserver
+
+# Installer et lancer le frontend Flutter
+cd ../frontend
+flutter pub get
+flutter run
+
+## 🚀 Utilisation
+
+1. **Accéder à l'API backend** : http://127.0.0.1:8000/api/
+2. **Lancer l'application Flutter** sur émulateur ou appareil réel
+3. **Créer un compte** utilisateur ou pharmacie
+4. **Rechercher des médicaments**
+5. **Passer une commande**
+
+📸 *Les captures d'écran sont disponibles dans le rapport du projet.*
+
+## 🔐 Configuration
+
+Créer un fichier `.env` pour le backend :
+
+```ini
+DEBUG=True
+SECRET_KEY=your_secret_key
+DATABASE_NAME=medishop_db
+DATABASE_USER=postgres
+DATABASE_PASSWORD=password
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+```
+
+## 🧪 Tests
+
+### Backend (Django)
+```bash
+python manage.py test
+```
+
+**Types de tests :**
 - Tests unitaires
 - Tests fonctionnels
-- Tests d’intégration des endpoints API
+- Tests d'intégration API
 
-### Tests Frontend (Flutter)
-- Tests des interfaces utilisateur
-- Tests fonctionnels (authentification, recherche, commande)
-- Tests de communication avec l’API
+### Frontend (Flutter)
+- Tests UI
+- Tests fonctionnels (navigation, formulaires)
+- Tests API
 
----
+## 🚀 Déploiement
 
-## ⚡ Performances et sécurité
+**Recommandations :**
+- **Backend** : VPS Linux avec Nginx + Gunicorn
+- **Base de données** : PostgreSQL
+- **Frontend mobile** : APK / Play Store (perspective)
 
-### Performances
-- Temps de réponse API optimisé
-- Requêtes efficaces (`select_related`, `prefetch_related`)
-- Mise en cache des données statiques
-- Bonne stabilité sur appareils mobiles modestes
+⚠️ *Le projet est actuellement en environnement académique (développement).*
 
-### Sécurité
-- Authentification JWT
-- Communication sécurisée via HTTPS
-- Gestion stricte des permissions (DRF)
-- Validation côté serveur
-- Protection contre injections et accès non autorisés
+## 🤝 Contributions
 
----
+Les contributions sont acceptées dans un cadre académique.
 
-## 📷 Aperçu de l’application
+**Processus :**
+1. Fork du dépôt
+2. Création d'une branche (`feature/ma-fonctionnalite`)
+3. Commit clair et structuré
+4. Pull Request
 
-- Tableau de bord pharmacie
-- Catalogue des médicaments
-- Recherche avancée
-- Panier et processus de paiement
-- Écran de couverture (Medishop)
+**Style de code :**
+- Respect des conventions Python (PEP8)
+- Code clair et commenté
 
-*(Voir les captures d’écran dans le rapport ou le dossier du projet)*
+## 👨‍🎓 Auteurs et remerciements
 
----
+**Auteur principal :**
+- Kassongo Moussa
+- Licence 3 – Génie Logiciel
+- Université Virtuelle du Burkina Faso
 
-## 🔗 Liens du projet
+**Encadrement :**
+- M. OUEDRAOGO W. A. Marc Christian
+- Tuteur académique
 
-- **Dépôt GitHub** :  
-  https://github.com/ka609/ProjetTutore  
-  https://github.com/ka609/Projet_Tutore
+🙏 *Merci à l'UV-BF pour l'encadrement pédagogique.*
 
----
+## 📜 Licence
 
-## 🚀 Perspectives d’amélioration
+Ce projet est sous licence MIT.  
+Voir le fichier **LICENSE** pour plus de détails.
+
+## 📞 Support et contact
+
+Pour toute question académique ou technique :
+- **GitHub** : https://github.com/ka609
+- **Projet** : https://github.com/ka609/ProjetTutore
+
+## 🛣️ Roadmap (évolutions futures)
 
 - Intégration du paiement mobile (Mobile Money)
 - Géolocalisation des pharmacies
-- Version Web complète
 - Notifications en temps réel
+- Version web complète
 - Gestion avancée des livraisons
 
 ---
 
-## 📝 Conclusion
-
-Ce projet a permis de concevoir une solution complète et moderne répondant aux besoins actuels de gestion pharmaceutique. Il met en pratique les compétences acquises en développement web, mobile, conception logicielle et sécurité des applications.
-
----
-
-**© 2024 – Projet Tutoré UV-BF | Kassongo Moussa**
+© 2024 – Projet Tutoré UV-BF | Medishop
